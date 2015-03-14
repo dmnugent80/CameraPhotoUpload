@@ -72,6 +72,7 @@ public class UploadActivity extends Activity {
 
         if (filePath != null) {
             // Displaying the image or video on the screen
+            Log.i("UploadApp", "file path is null");
             previewMedia(isImage);
         } else {
             Toast.makeText(getApplicationContext(),
@@ -181,9 +182,6 @@ public class UploadActivity extends Activity {
 
                 totalSize = entity.getContentLength();
                 httppost.setEntity(entity);
-
-                //String boundary = "-------------" + System.currentTimeMillis();
-                //httppost.setHeader("Content-type", "multipart/form-data; boundary="+boundary);
 
                 // Making server call
                 HttpResponse response = httpclient.execute(httppost);
